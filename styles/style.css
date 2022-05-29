@@ -721,14 +721,31 @@ span#footer-copyright {
     cursor: pointer;
 }
 
+#projects-menu .menu-item::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: var(--theme-color-A);
+    width: 100%;
+    aspect-ratio: 1.7;
+    z-index: -1;
+}
+
 #projects-menu .menu-item .menu-image {
     position: relative;
     float: left;
     width: 100%;
-    aspect-ratio: 1.5;
+    aspect-ratio: 1.7;
     background-size: cover;
     background-position: center;
     margin-bottom: 0.5em;
+    z-index: 99;
+    transition: all 150ms ease-in-out;
+}
+
+#projects-menu .menu-item.active .menu-image {
+    opacity: 0.5;
 }
 
 #projects-menu .menu-item span {

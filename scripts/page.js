@@ -27,6 +27,25 @@ window.onload = () => {
     document.querySelector("#projects-content-btn").addEventListener("click", (e) => {
         showProjects();
     });
+
+    document.addEventListener("scroll", (e) => {
+        const h = window.innerHeight * 0.5;
+        let cross = false;
+        document.querySelectorAll(".project-frame").forEach((p) => {
+            const rect = p.getBoundingClientRect();
+            if (rect.y + rect.height - h < 0) {
+                cross = true;
+            } else if (cross && rect.y + rect.height - h > 0) {
+                if (document.querySelector("#projects-menu .menu-item.active")) {
+                    document.querySelector("#projects-menu .menu-item.active").classList.remove("active");
+                }
+                const activeItem = document.querySelector(`#menu_${p.id}`);
+                if (activeItem) {
+                    activeItem.classList.add("active");
+                }
+            }
+        });
+    });
 };
 
 const showDesigner = () => {
@@ -64,11 +83,21 @@ const showProjects = () => {
         projects.classList.add("active");
     }
 
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      });
+    if (document.querySelector("#projects-menu .menu-item.active")) {
+        const rect = document.querySelector("#projects-menu .menu-item.active").getBoundingClientRect();
+        window.scrollTo({
+            top: rect.scrollTop + 200,
+            left: 0,
+            behavior: 'smooth'
+            });
+    } else {
+        document.querySelector("#projects-menu .menu-item").classList.add("active");
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
+    }
 }
 
 const loadProjects = () => {
@@ -139,7 +168,6 @@ const generateProjectsContainer = (d) => {
 
         thesisMenu.addEventListener("click", (e) => {
             const rect = document.querySelector(`#${d.thesis.id}`).getBoundingClientRect();
-            console.log(rect);
             window.scrollTo({
                 top: rect.scrollTop + 200,
                 left: 0,
