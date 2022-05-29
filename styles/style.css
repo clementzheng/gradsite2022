@@ -26,7 +26,7 @@
 body {
     font-family: "CabinetGrotesk-Variable";
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     background: var(--dark-bg-color);
     color: black;
     scrollbar-width: thin;
@@ -781,6 +781,10 @@ span#footer-copyright {
         width: 40%;
         margin-top: 1em;
     }
+    
+    #content {
+        scroll-margin: 33vh;
+    }
 
     #gallery-menu {
         width: 100%;
@@ -877,6 +881,10 @@ span#footer-copyright {
         width: calc(100vw - 3 * var(--landing-margin));
         max-width: 1400px;
         padding-right: 0;
+    }
+    
+    .project-frame {
+        scroll-margin: 25vh;
     }
     
     #projects-menu {
