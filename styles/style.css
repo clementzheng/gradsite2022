@@ -744,7 +744,7 @@ span#footer-copyright {
 
 @media only screen and (max-width: 700px) {
     #landing {
-        height: 80vh;
+        height: 100vh;
     }
 
     #landing-footer .footer-item {
