@@ -7,7 +7,7 @@ window.onload = () => {
     const location = params.get("location");
     designerObj = DATA.designers[index];
 
-    console.log(designerObj);
+    // console.log(designerObj);
     document.querySelector("#designer-container").append(generateDesignerContent(designerObj));
     document.querySelector("#projects-container").append(...generateProjectsContainer(designerObj));
 

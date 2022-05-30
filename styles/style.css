@@ -450,7 +450,7 @@ span#footer-copyright {
 }
 
 .project-view .gallery-card .designer-project {
-    opacity: 0.6;
+    opacity: 0.3;
     z-index: 1;
 }
 
@@ -643,7 +643,7 @@ span#footer-copyright {
     position: relative;
     float: left;
     width: 100%;
-    margin-bottom: 5em;
+    margin-bottom: 10em;
 }
 
 #projects-content .frame h1 {
@@ -655,7 +655,11 @@ span#footer-copyright {
 }
 
 #projects-content .frame .project-title {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+}
+
+#projects-content .frame .project-title p {
+    margin-bottom: 0.5em;
 }
 
 #projects-content .frame img {
@@ -728,7 +732,7 @@ span#footer-copyright {
     top: 0;
     background: var(--theme-color-A);
     width: 100%;
-    aspect-ratio: 1.7;
+    aspect-ratio: 2.5;
     z-index: -1;
 }
 
@@ -736,7 +740,7 @@ span#footer-copyright {
     position: relative;
     float: left;
     width: 100%;
-    aspect-ratio: 1.7;
+    aspect-ratio: 2.5;
     background-size: cover;
     background-position: center;
     margin-bottom: 0.5em;

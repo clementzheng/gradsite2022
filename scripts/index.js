@@ -54,6 +54,10 @@ window.onload = () => {
     document.querySelector("#gallery-filter-sst").addEventListener("click", (e) => {
         applyGalleryFilter("Social Service Transformation"); 
     });
+
+    document.querySelector("#landing-arrow").addEventListener("click", (e) => {
+        document.querySelector("#content").scrollIntoView({behavior: "smooth"});
+    });
 }
 
 const openDesignerGallery = () => {
