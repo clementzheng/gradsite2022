@@ -178,6 +178,7 @@ p {
     bottom: var(--landing-margin);
     width: min(25%, 150px);
     z-index: 2;
+    cursor: pointer;
 }
 
 #landing-arrow svg {
@@ -265,6 +266,17 @@ p {
 span#footer-copyright {
     font-size: 0.9em;
     font-weight: 200;
+}
+
+#footer .footer-links a {
+    display: inline-block;
+    width: 3em;
+    aspect-ratio: 1;
+    margin-left: 1em;
+}
+
+#footer .footer-links a img {
+    width: 100%;
 }
 
 /* CONTENT */
@@ -615,6 +627,20 @@ span#footer-copyright {
 
 .page-designer-links {
     color: var(--theme-color-C);
+    display: flex;
+    align-items: center;
+}
+
+.page-designer-links a {
+    position: relative;
+    display: inline-block;
+    width: 2.5em;
+    aspect-ratio: 1;
+    margin-left: 1em;
+}
+
+.page-designer-links a img {
+    width: 100%;
 }
 
 #projects-content {

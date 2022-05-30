@@ -142,7 +142,7 @@ const generateDesignerContent = (d) => {
     innerFrameB.innerHTML += `<div class="page-designer-description">${blurb[blurb.length - 1]}</div>`;
     innerFrameB.innerHTML += d.link ? `<div class="page-designer-portfolio">view my <a href="${d.link}" target="_blank">portfolio</a></div>` : "";
     if (d.linkedin || d.email) {
-        innerFrameB.innerHTML += `<div class="page-designer-links">connect with me: ${d.linkedin ? `<a href="${d.linkedin}" target="_blank">LinkedIn</a>` : ""} ${d.email ? `<a href="mailto:${d.email}" target="_blank">email</a>` : ""}</div>`;
+        innerFrameB.innerHTML += `<div class="page-designer-links">connect with me: ${d.linkedin ? `<a href="${d.linkedin}" target="_blank"><img src="assets/li.svg"></a>` : ""} ${d.email ? `<a href="mailto:${d.email}" target="_blank"><img src="assets/mail.svg"></a>` : ""}</div>`;
     }
 
     innerFrame.append(name, innerFrameA, innerFrameB);
