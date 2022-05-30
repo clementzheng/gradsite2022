@@ -273,6 +273,7 @@ span#footer-copyright {
     width: 3em;
     aspect-ratio: 1;
     margin-left: 1em;
+    z-index: 99;
 }
 
 #footer .footer-links a img {
