@@ -250,7 +250,7 @@ p {
 
 #footer .footer-center {
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     text-align: center;
     width: calc(100% - 2 * var(--landing-margin));
 }
