@@ -250,7 +250,7 @@ p {
 
 #footer .footer-center {
     position: absolute;
-    z-index: 0;
+    z-index: -1;
     text-align: center;
     width: calc(100% - 2 * var(--landing-margin));
 }
@@ -266,6 +266,11 @@ p {
 span#footer-copyright {
     font-size: 0.9em;
     font-weight: 200;
+}
+
+#footer .footer-links {
+    position: relative;
+    z-index: 99;
 }
 
 #footer .footer-links a {
