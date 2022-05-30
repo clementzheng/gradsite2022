@@ -275,7 +275,7 @@ const generateProjectContent = (p) => {
 
     let designers = "";
     p.designers.forEach((d, i, arr) => {
-        designers += DATA.designers[d.index].name;
+        designers += DATA.designers[d.index].preferred ? DATA.designers[d.index].preferred : DATA.designers[d.index].name;
         if (i < arr.length - 1) {
             designers += ", ";
         }
