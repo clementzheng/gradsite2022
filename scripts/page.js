@@ -33,9 +33,7 @@ window.onload = () => {
         let cross = false;
         document.querySelectorAll(".project-frame").forEach((p) => {
             const rect = p.getBoundingClientRect();
-            if (rect.y + rect.height - h < 0) {
-                cross = true;
-            } else if (cross && rect.y + rect.height - h > 0) {
+            if (rect.y + rect.height - h > 0 && !cross) {
                 if (document.querySelector("#projects-menu .menu-item.active")) {
                     document.querySelector("#projects-menu .menu-item.active").classList.remove("active");
                 }
@@ -43,6 +41,7 @@ window.onload = () => {
                 if (activeItem) {
                     activeItem.classList.add("active");
                 }
+                cross = true;
             }
         });
     });
@@ -103,7 +102,16 @@ const showProjects = () => {
 const loadProjects = () => {
     DATA.designers.forEach(d => {
         d.thesis = DATA.thesis.find(t => (t.designers[0].id === d.id));
-        d.projects = DATA.projects.filter(p => (p.designers[0].id === d.id));
+        d.projects = DATA.projects.filter(p => {
+            let filtered = false;
+            p.designers.forEach(des => {
+                if (des.id === d.id) {
+                    // console.log(p.name, DATA.designers[des.index], "1");
+                    filtered = true;
+                }
+            });
+            return filtered;
+        });
     });
 }
 
@@ -168,8 +176,9 @@ const generateProjectsContainer = (d) => {
 
         thesisMenu.addEventListener("click", (e) => {
             const rect = document.querySelector(`#${d.thesis.id}`).getBoundingClientRect();
+            const val = rect.top + window.scrollY;
             window.scrollTo({
-                top: rect.scrollTop + 200,
+                top: val - 200,
                 left: 0,
                 behavior: 'smooth'
               });
@@ -177,6 +186,29 @@ const generateProjectsContainer = (d) => {
 
         projectsMenu.append(thesisMenu);
     }
+
+    d.projects.forEach((p) => {
+        const projFrame = generateProjectContent(p);
+        projectsHolder.append(projFrame);
+
+        const projMenu = document.createElement("div");
+        projMenu.id = `menu_${p.id}`;
+        projMenu.classList.add("menu-item");
+        const bgimg = `url('assets/projects/${p.imageNames[0]}')`;
+        projMenu.innerHTML = `<div class="menu-image" style="background-image: ${bgimg};"></div><span>${p.name}</span>`;
+
+        projMenu.addEventListener("click", (e) => {
+            const rect = document.querySelector(`#${p.id}`).getBoundingClientRect();
+            const val = rect.top + window.scrollY;
+            window.scrollTo({
+                top: val - 200,
+                left: 0,
+                behavior: 'smooth'
+              });
+        });
+
+        projectsMenu.append(projMenu);
+    })
 
     return [projectsHolder, projectsMenu];
 };
@@ -197,7 +229,7 @@ const generateThesisContent = (p) => {
     hero.innerHTML += `<img src="assets/thesis/${p.imageNames[0]}">`;
 
     frame.append(title, hero);
-    console.log(p);
+
     p.imageNames.forEach((n, i) => {
         if (i > 0) {
             const caption = document.createElement("div");
@@ -213,7 +245,67 @@ const generateThesisContent = (p) => {
         
         if (p.video.type === "youtube") {
             video.innerHTML = `<iframe width="100%" height="360" src="https://www.youtube.com/embed/${p.video.id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        } else if (_video.type === "vimeo") {
+        } else if (p.video.type === "vimeo") {
+            video.innerHTML = `<iframe src="https://player.vimeo.com/video/${p.video.id}" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+        } else {
+            video.innerHTML = "";
+        }
+
+        frame.append(video);
+    }
+
+
+    return frame;
+};
+
+
+const generateProjectContent = (p) => {
+    const frame = document.createElement("div");
+    frame.classList.add("project-frame");
+    frame.classList.add("frame");
+    frame.id = p.id;
+
+    const title = document.createElement("div");
+    title.classList.add("project-title");
+    let leaders = "";
+    DATA.platforms[p.platform.index].leaders.forEach((l, i, arr) => {
+        leaders += DATA.leaders[l.index].name;
+        if (i < arr.length - 1) leaders += ", ";
+    })
+
+    let designers = "";
+    p.designers.forEach((d, i, arr) => {
+        designers += DATA.designers[d.index].name;
+        if (i < arr.length - 1) {
+            designers += ", ";
+        }
+    });
+    designers += p.collaborators !== "" ? `, ${p.collaborators}` : "";
+    title.innerHTML = `<h1>${p.name}</h1><p>Platform: <i>${DATA.platforms[p.platform.index].name}</i> by ${leaders}</p><p>Designers: ${designers}</p>`;
+    
+    const hero = document.createElement("div");
+    hero.classList.add("project-hero");
+    hero.innerHTML = `${marked.parse(p.description)}`;
+    hero.innerHTML += `<img src="assets/projects/${p.imageNames[0]}">`;
+
+    frame.append(title, hero);
+
+    p.imageNames.forEach((n, i) => {
+        if (i > 0) {
+            const caption = document.createElement("div");
+            caption.classList.add("project-caption");
+            caption.innerHTML = `<img src="assets/projects/${n}"><div class="caption">${p.captions[i] ? marked.parse(p.captions[i]) : ""}</div>`;
+            frame.append(caption);
+        }
+    });
+    
+    if (p.video) {
+        const video = document.createElement("div");
+        video.classList.add("project-video");
+        
+        if (p.video.type === "youtube") {
+            video.innerHTML = `<iframe width="100%" height="360" src="https://www.youtube.com/embed/${p.video.id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        } else if (p.video.type === "vimeo") {
             video.innerHTML = `<iframe src="https://player.vimeo.com/video/${p.video.id}" width="100%" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
         } else {
             video.innerHTML = "";
