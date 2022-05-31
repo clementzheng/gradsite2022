@@ -129,7 +129,7 @@ const loadProjects = () => {
     DATA.designers.forEach(d => {
         d.thesis = DATA.thesis.find(t => (t.designers[0].id === d.id));
         d.projects = DATA.projects.filter(p => {
-            console.log(p);
+            // console.log(p);
             if (p.designers.length === 0) {
                 return false;
             } else {

@@ -379,6 +379,8 @@ span#footer-copyright {
     background-color: var(--theme-color-A);
     transition: all 500ms ease-in-out;
     opacity: 0.1;
+    display: flex;
+    justify-content: center;
 }
 
 #gallery-holder .gallery-card.active {
@@ -421,16 +423,18 @@ span#footer-copyright {
 }
 
 .gallery-card .project-name {
-    position: absolute;
-    width: calc(100%);
+    height: calc(10em / 0.7);
+    padding: 3em 1em;
+    /* vertical-align: middle; */
     color: white;
     font-weight: 500;
+    /* text-transform: uppercase; */
+    font-size: 1.0em;
     line-height: 1.0;
     text-align: center;
-    top: -0.5em;
-    left: -5em;
-    transform-origin: center;
-    transform: translate(5em, calc(5em/0.7)) rotateZ(-90deg) rotateY(180deg) scale(1.2);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotateY(180deg) scale(1.2);
     transition: all 500ms ease-in-out;
 }
 

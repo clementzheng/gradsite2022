@@ -268,10 +268,13 @@ const generateProjectContent = (p) => {
     const title = document.createElement("div");
     title.classList.add("project-title");
     let leaders = "";
-    DATA.platforms[p.platform.index].leaders.forEach((l, i, arr) => {
-        leaders += DATA.leaders[l.index].name;
-        if (i < arr.length - 1) leaders += ", ";
-    })
+
+    if (p.platform) {
+        DATA.platforms[p.platform.index].leaders.forEach((l, i, arr) => {
+            leaders += DATA.leaders[l.index].name;
+            if (i < arr.length - 1) leaders += ", ";
+        });
+    }
 
     let designers = "";
     p.designers.forEach((d, i, arr) => {
@@ -280,8 +283,10 @@ const generateProjectContent = (p) => {
             designers += ", ";
         }
     });
-    designers += p.collaborators !== "" ? `, ${p.collaborators}` : "";
-    title.innerHTML = `<h1>${p.name}</h1><p>Platform: <i>${DATA.platforms[p.platform.index].name}</i> by ${leaders}</p><p>Designers: ${designers}</p>`;
+    if (p.collaborators) {
+        designers += p.collaborators !== "" ? `, ${p.collaborators}` : "";
+    }
+    title.innerHTML = `<h1>${p.name}</h1>${p.platform ? `<p>Platform: <i>${DATA.platforms[p.platform.index].name}</i> by ${leaders}</p>` : ""}<p>Designers: ${designers}</p>`;
     
     const hero = document.createElement("div");
     hero.classList.add("project-hero");
