@@ -383,9 +383,10 @@ span#footer-copyright {
 #gallery-holder .gallery-card {
     position: relative;
     float: left;
-    width: 10em;
+    width: 0;
+    overflow: hidden;
     aspect-ratio: 0.7;
-    margin: 0 2em 2em 0;
+    margin: 0;
     cursor: pointer;
     background-color: var(--theme-color-A);
     transition: all 500ms ease-in-out;
@@ -394,8 +395,16 @@ span#footer-copyright {
     justify-content: center;
 }
 
-#gallery-holder .gallery-card.active {
+#gallery-holder.designer-view .gallery-card {
+    width: 10em;
     opacity: 1.0;
+    margin: 0 2em 2em 0;
+}
+
+#gallery-holder.project-view .gallery-card.thesis.active {
+    width: 10em;
+    opacity: 1.0;
+    margin: 0 2em 2em 0;
 }
 
 .gallery-card .designer-portrait, .gallery-card .designer-project {
@@ -888,8 +897,16 @@ span#footer-copyright {
     }
 
     #gallery-holder .gallery-card {
+        display: none;
+        margin: 0;
+    }
+
+    #gallery-holder.designer-view .gallery-card, #gallery-holder.project-view .gallery-card.active.thesis {
+        display: flex;
         width: 40%;
-        margin-right: 0;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 2em;
     }
 
     #page-header #page-logo {

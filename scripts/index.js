@@ -172,6 +172,7 @@ const generateGallery = () => {
         projName.classList.add("project-name");
 
         if (d.thesis) {
+            card.classList.add("thesis");
             proj.style.backgroundImage = `url(assets/thesis/${d.thesis.imageNames[0]})`;
             projName.innerHTML = d.thesis.name;
             switch(d.thesis.specialization[0]) {
@@ -185,10 +186,11 @@ const generateGallery = () => {
                     card.classList.add("spec-sst");
                     break;
             }
-        } else if (d.projects.length > 0) {
-            proj.style.backgroundImage = `url(assets/projects/${d.projects[0].imageNames[0]})`;
-            projName.innerHTML = d.projects[0].name;
         }
+        // else if (d.projects.length > 0) {
+        //     proj.style.backgroundImage = `url(assets/projects/${d.projects[0].imageNames[0]})`;
+        //     projName.innerHTML = d.projects[0].name;
+        // }
 
         card.addEventListener("click", (e) => {
             if (document.querySelector("#gallery-holder").classList.contains("designer-view")) {
