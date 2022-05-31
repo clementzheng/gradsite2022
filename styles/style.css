@@ -289,11 +289,12 @@ span#footer-copyright {
 
 #content {
     position: relative;
+    float: left;
     width: 100%;
     padding: 5em var(--landing-margin);
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     background: white;
 }
 
@@ -301,10 +302,19 @@ span#footer-copyright {
 
 #gallery-menu {
     position: relative;
+    float: left;
     width: max(20%, 200px);
     font-weight: 300;
     margin-bottom: 2em;
     padding-right: 2em;
+    z-index: 2;
+}
+
+#gallery-menu.sticky {
+    position: fixed;
+    top: 0;
+    padding-top: 5em;
+    padding-bottom: 2em;
 }
 
 #gallery-menu .gallery-btn {
@@ -366,6 +376,7 @@ span#footer-copyright {
 
 #gallery-holder {
     position: relative;
+    float: right;
     width: min(80%, calc(100% - 200px));
 }
 
@@ -828,7 +839,14 @@ span#footer-copyright {
 
     #gallery-menu {
         width: 100%;
-        padding: 0;
+        padding: 1em;
+        background: white;
+    }
+
+    #gallery-menu.sticky {
+        width: 100%;
+        padding: 3em 1em 2em 1em;
+        left: 0;
     }
 
     #gallery-menu .gallery-btn {

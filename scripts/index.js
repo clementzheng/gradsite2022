@@ -58,6 +58,15 @@ window.onload = () => {
     document.querySelector("#landing-arrow").addEventListener("click", (e) => {
         document.querySelector("#content").scrollIntoView({behavior: "smooth"});
     });
+
+    document.addEventListener("scroll", (e) => {
+        const rect = document.querySelector("#content").getBoundingClientRect();
+        if (rect.y < 0) {
+            document.querySelector("#gallery-menu").classList.add("sticky");
+        } else {
+            document.querySelector("#gallery-menu").classList.remove("sticky");
+        }
+    })
 }
 
 const openDesignerGallery = () => {
