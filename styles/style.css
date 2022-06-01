@@ -15,6 +15,8 @@
     --theme-color-A: #824BB2;
     --theme-color-B: #D4E3BE;
     --theme-color-C: #DCB5FF;
+    --scale: max(100vw, 1920px);
+    --font-size: max(calc(var(--scale) / 120), 16px);
 }
 
 *, html {
@@ -26,7 +28,7 @@
 body {
     font-family: "CabinetGrotesk-Variable";
     font-weight: 300;
-    font-size: 16px;
+    font-size: var(--font-size);
     background: var(--dark-bg-color);
     color: black;
     scrollbar-width: thin;
@@ -90,6 +92,7 @@ p {
 }
 
 #landing-header-menu a {
+    font-size: 1.2em;
     margin-left: 2em;
     margin-bottom: 1em;
 }
@@ -107,7 +110,7 @@ p {
 
 #landing-content-wrapper {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -156,7 +159,7 @@ p {
     position: relative;
     width: 35%;
     min-width: 200px;
-    max-width: 400px;
+    max-width: 500px;
     margin-top: 0.5em;
 }
 
@@ -192,6 +195,12 @@ p {
 }
 
 #landing-arrow svg {
+    position: relative;
+    float: right;
+    width: 30%;
+}
+
+#landing-arrow img {
     position: relative;
     float: right;
     width: 30%;
@@ -517,6 +526,119 @@ span#footer-copyright {
 }
 
 
+/* ABOUT */
+/* ABOUT */
+/* ABOUT */
+/* ABOUT */
+/* ABOUT */
+/* ABOUT */
+
+#about-header {
+    position: relative;
+    clear: both;
+    width: 100%;
+    background: var(--dark-bg-color);
+    color: var(--theme-color-B);
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    padding: var(--landing-margin);
+    user-select: none;
+    overflow: hidden
+}
+
+#about-logo a {
+    width: 4em;
+    aspect-ratio: 1;
+}
+
+#about-logo a img {
+    width: 100%;
+}
+
+#about-content {
+    position: relative;
+    float: left;
+    width: 100%;
+    min-height: calc(100vh - 20em);
+    padding: 4em var(--landing-margin);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+#about-content div {
+    position: relative;
+    width: calc(100vw - 2 * var(--landing-margin));
+    max-width: 1000px;
+    color: white;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#about-content h1 {
+    font-weight: 200;
+    font-size: 2.5em;
+}
+
+#about-content .about-blurb img {
+    position: relative;
+    float: left;
+    width: 30%;
+    padding-right: 10%;
+}
+
+#about-content .about-blurb p {
+    position: relative;
+    float: left;
+    width: 60%;
+    color: var(--theme-color-C);
+    font-size: 1.5em;
+}
+
+#about-content p {
+    margin: 0.5em 0;
+    max-width: 60ch;
+}
+
+#about-content p span {
+    color: var(--theme-color-C);
+}
+
+#grad-book {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: relative;
+    float: left;
+    width: 90vw;
+    margin: 0 5vw 5em 5vw;
+}
+
+#grad-book img {
+    position: relative;
+    right: 0;
+    width: 50px;
+    margin-bottom: 2em;
+}
+
+#grad-book #adobe-dc-view {
+    position: relative;
+    float: left;
+    width: 100%;
+    aspect-ratio: 1.8;
+    border: none;
+    border-radius: 0.25em;
+    background: #202020;
+    border: 1px solid #AAA;
+}
+
+
 /* PAGE */
 /* PAGE */
 /* PAGE */
@@ -538,7 +660,7 @@ span#footer-copyright {
     position: relative;
     float: left;
     aspect-ratio: 1;
-    width: 3em;
+    width: 4em;
 }
 
 #page-header #page-logo a {
@@ -699,8 +821,8 @@ span#footer-copyright {
 #projects-menu {
     position: relative;
     float: right;
-    width: calc(0.2 * (100vw - 3 * var(--landing-margin)));
-    max-width: calc(0.2 * 1400px);
+    width: calc(0.2 * (100vw - 4 * var(--landing-margin)));
+    max-width: calc(0.18 * 1400px);
     color: white;
 }
 
@@ -921,6 +1043,15 @@ span#footer-copyright {
         margin: 0;
         padding: 0;
         margin-bottom: 2em;
+    }
+
+    #about-content .about-blurb img {
+        width: 250px;
+        margin-bottom: 1em;
+    }
+    
+    #about-content .about-blurb p {
+        width: 100%;
     }
 
     #page-header #page-logo {

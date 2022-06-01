@@ -7,6 +7,8 @@ window.onload = () => {
     const location = params.get("location");
     designerObj = DATA.designers[index];
 
+    document.title = designerObj.preferred ? designerObj.preferred : designerObj.name;
+
     document.querySelector("#designer-content-btn").addEventListener("click", (e) => {
         showDesigner();
     });

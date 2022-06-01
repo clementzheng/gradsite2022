@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About DID</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body>
+	<div id="about-header">
+        <div id="landing-header">
+            <div id="about-logo">
+                <a href="index.html"><img src="assets/22_logo.svg"></a>
+            </div>
+            <div id="landing-header-menu">
+                <a href="about.html">About DID</a>
+            </div>
+        </div>
+    </div>
+    
+   <div id="about-content">
+       <div>
+            <h1>About DID</h1>
+       </div>
+       <div class="about-blurb">
+           <img src="assets/DID_Logo.svg">
+           <p>
+            "Most people are never taught how to innovate and create solutions centred around human beings&mdash;despite how every discipline exists to serve people."
+           </p>
+       </div>
+       <div>
+           <p>
+               <span>Industrial Design</span>&mdash;sometimes a puzzling name&mdash;has been that very discipline that teaches you exactly how to invent the next best idea for humanity.
+            </p>
+            <p>
+                We are a highly-specialised course that brings <span>the most creative aspects of technology, engineering, artistry, and business entrepreneurship together.</span>
+                We align these aspects with a deep understanding of how human beings perceive, adopt, and use innovative solutions&mdash;and how the tangible and immaterial resources of this world can be put together to make these solutions happen.
+                We strive to create <span>new products, services, spaces, apps, user experiences, and businesses that people love.</span>
+            </p>
+            <p>
+                The <span>Division of Industrial Design</span> is part of the <span>College of Design and Engineering</span> at the <span>National University of Singapore</span>.
+            </p>
+       </div>
+       <div>
+           <p>
+            If you are multi-curious, dabble in both the arts and tech, and consider yourself a mix of an artist, scientist, maker, communicator, engineer, inventor, researcher, technologist, and entrepreneur, have a look at this highly-challenging degree course.
+           </p>
+       </div>
+   </div>
+
+   <div id="grad-book">
+        <img src="assets/arrow.svg">
+        <div id="adobe-dc-view"></div>
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script type="text/javascript">
+        document.addEventListener("adobe_dc_view_sdk.ready", function(){
+            var adobeDCView = new AdobeDC.View({clientId: "<YOUR_CLIENT_ID>", divId: "adobe-dc-view"});
+            adobeDCView.previewFile({
+            content:{ location:
+                { url: "https://files.cargocollective.com/c45711/GRADBOOK2022_FINAL_web.pdf"}},
+            metaData:{fileName: "NUSDID2022_book.pdf"}
+            },
+            {
+            embedMode: "SIZED_CONTAINER"
+            });
+        });
+        </script>
+    </div>
+
+    <div id="footer">
+        <div class="footer-logo">
+            <img src="assets/22_logo.svg">
+        </div>
+        <div class="footer-center">
+            <span id="footer-hashtag">#NUSDIDGRADSHOW2022</span>
+            <span id="footer-copyright">&copy; 2022 All Rights Reserved</span>
+        </div>
+        <div class="footer-links">
+            <a href="https://www.facebook.com/NUSDIDSHOW20/" target="_blank"><img src="assets/fb.svg"></a>
+            <a href="https://www.instagram.com/nusdidshow22/" target="_blank"><img src="assets/ig.svg"></a>
+        </div>
+    </div>
+  </body>
+</html>
