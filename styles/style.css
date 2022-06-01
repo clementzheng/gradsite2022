@@ -173,6 +173,11 @@ p {
     height: 1.5em;
 }
 
+.footer-item span label {
+    display: inline-block;
+    width: 7em;
+}
+
 .footer-item span.footer-item-subheading {
     font-weight: 200;
 }
