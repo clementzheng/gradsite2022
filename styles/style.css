@@ -627,11 +627,11 @@ span#footer-copyright {
     margin-bottom: 2em;
 }
 
-#grad-book #adobe-dc-view {
+#grad-book iframe {
     position: relative;
     float: left;
     width: 100%;
-    aspect-ratio: 1.8;
+    aspect-ratio: 1.9;
     border: none;
     border-radius: 0.25em;
     background: #202020;
