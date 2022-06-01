@@ -147,7 +147,7 @@ p {
 
 #landing-footer {
     position: relative;
-    width: max(75%, calc(100% - 150px));
+    width: max(80%, calc(100% - 150px));
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
@@ -164,7 +164,7 @@ p {
 }
 
 #landing-footer .footer-item.visit {
-    width: 100px;
+    width: 80px;
 }
 
 .footer-item span {
@@ -178,7 +178,7 @@ p {
 
 .footer-item span label {
     display: inline-block;
-    width: 7em;
+    width: 6.5em;
 }
 
 .footer-item span.footer-item-subheading {
@@ -294,7 +294,7 @@ span#footer-copyright {
 
 #footer .footer-links a {
     display: inline-block;
-    width: 3em;
+    width: 2.5em;
     aspect-ratio: 1;
     margin-left: 1em;
     z-index: 99;
@@ -574,7 +574,7 @@ span#footer-copyright {
     width: calc(100vw - 2 * var(--landing-margin));
     max-width: 1000px;
     color: white;
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-bottom: 2em;
     display: flex;
     flex-wrap: wrap;
