@@ -7,9 +7,22 @@ window.onload = () => {
     const location = params.get("location");
     designerObj = DATA.designers[index];
 
+    document.querySelector("#designer-content-btn").addEventListener("click", (e) => {
+        showDesigner();
+    });
+
+    document.querySelector("#projects-content-btn").addEventListener("click", (e) => {
+        showProjects();
+    });
+
     // console.log(designerObj);
     document.querySelector("#designer-container").append(generateDesignerContent(designerObj));
-    document.querySelector("#projects-container").append(...generateProjectsContainer(designerObj));
+
+    if (designerObj.thesis === undefined && designerObj.projects.length === 0) {
+        document.querySelector("#projects-content-btn").classList.add("hidden");
+    } else {
+        document.querySelector("#projects-container").append(...generateProjectsContainer(designerObj));
+    }
 
     switch (location) {
         case "designer":
@@ -19,14 +32,6 @@ window.onload = () => {
             showProjects();
             break;
     }
-
-    document.querySelector("#designer-content-btn").addEventListener("click", (e) => {
-        showDesigner();
-    });
-
-    document.querySelector("#projects-content-btn").addEventListener("click", (e) => {
-        showProjects();
-    });
 
     document.addEventListener("scroll", (e) => {
         const h = window.innerHeight * 0.5;
