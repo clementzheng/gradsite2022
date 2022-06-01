@@ -115,7 +115,7 @@ p {
 
 #landing-content-text {
     width: 80%;
-    font-size: 3.0em;
+    font-size: 3.5em;
     font-weight: 100;
     text-transform: uppercase;
     line-height: 1.1;
@@ -146,7 +146,7 @@ p {
     position: relative;
     width: max(75%, calc(100% - 150px));
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-end;
     flex-wrap: wrap;
     z-index: 2;
@@ -154,9 +154,14 @@ p {
 
 #landing-footer .footer-item {
     position: relative;
-    width: 25%;
+    width: 35%;
     min-width: 200px;
+    max-width: 400px;
     margin-top: 0.5em;
+}
+
+#landing-footer .footer-item.visit {
+    width: 100px;
 }
 
 .footer-item span {
