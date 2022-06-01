@@ -26,7 +26,7 @@
 body {
     font-family: "CabinetGrotesk-Variable";
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     background: var(--dark-bg-color);
     color: black;
     scrollbar-width: thin;
@@ -528,7 +528,7 @@ span#footer-copyright {
     position: relative;
     float: left;
     aspect-ratio: 1;
-    width: 4em;
+    width: 3em;
 }
 
 #page-header #page-logo a {
@@ -556,7 +556,7 @@ span#footer-copyright {
     color: white;
     display: flex;
     justify-content: center;
-    margin: 1.5em 0 0 0;
+    margin: 0.8em 0 0 0;
 }
 
 #page-toggle-bar .hidden {
