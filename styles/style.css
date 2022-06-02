@@ -111,6 +111,7 @@ p {
 #landing-content-wrapper {
     width: 100%;
     max-width: 1200px;
+    font-size: calc(min(100vw, 1200px) / 19);
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
@@ -118,7 +119,7 @@ p {
 
 #landing-content-text {
     width: 80%;
-    font-size: 3.5em;
+    /* font-size: 3.2em; */
     font-weight: 100;
     text-transform: uppercase;
     line-height: 1.1;
@@ -126,7 +127,7 @@ p {
 
 #landing-content-logo {
     width: 20%;
-    padding-bottom: 0.6em;
+    /* padding-bottom: 0.6em; */
 }
 
 #landing-content-logo img {
@@ -972,7 +973,7 @@ span#footer-copyright {
     }
 
     #landing-content-text {
-        font-size: 1.25em;
+        font-size: 1.20em;
         width: 100%;
     }
 
@@ -1049,9 +1050,10 @@ span#footer-copyright {
     }
 
     #about-content {
-        width: 100%;
+        width: 100vw;
         padding: 0 var(--landing-margin);
         margin: 0;
+        margin-top: 5em;
     }
 
     #about-content .about-blurb img {
