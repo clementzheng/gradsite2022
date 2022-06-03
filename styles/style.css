@@ -512,7 +512,7 @@ span#footer-copyright {
 }
 
 .project-view .gallery-card .designer-project {
-    opacity: 0.3;
+    opacity: 0.25;
     z-index: 1;
 }
 
@@ -583,8 +583,9 @@ span#footer-copyright {
 }
 
 #about-content h1 {
-    font-weight: 200;
-    font-size: 2.5em;
+    font-weight: 500;
+    font-size: 1.0em;
+    text-transform: uppercase;
 }
 
 #about-content .about-blurb img {
@@ -611,20 +612,19 @@ span#footer-copyright {
 }
 
 #grad-book {
+    position: relative;
+    float: left;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
-    position: relative;
-    float: left;
     width: 90vw;
     margin: 0 5vw 5em 5vw;
 }
 
 #grad-book img {
     position: relative;
-    right: 0;
+    margin-right: calc(50% - min(400px, 50%) + 25px);
     width: 50px;
-    margin-right: calc(50% - min(50%, 700px)); 
     margin-bottom: 2em;
 }
 
@@ -639,6 +639,18 @@ span#footer-copyright {
     border-radius: 0.25em;
     background: #202020;
     border: 1px solid #AAA;
+}
+
+#grad-book #gradbook-btn {
+    position: relative;
+    width: 100%;
+    background-color: var(--theme-color-B);
+    padding: 1em;
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: black;
+    border-radius: 0.25em;
 }
 
 
@@ -961,6 +973,10 @@ span#footer-copyright {
 @media only screen and (max-width: 700px) {
     #landing {
         height: 90vh;
+    }
+
+    #division-logo {
+        height: 30px;
     }
 
     #landing-footer .footer-item {

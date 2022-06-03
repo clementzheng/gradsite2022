@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>About DID</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/style.css?version=3">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
   <body>
@@ -71,5 +71,19 @@
             <a href="https://www.instagram.com/nusdidshow22/" target="_blank"><img src="assets/ig.svg"></a>
         </div>
     </div>
+
+    <script>
+        window.onload = () => {
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                document.querySelector("#grad-book iframe").remove();
+                const gradbookBtn = document.createElement("a");
+                gradbookBtn.id = "gradbook-btn";
+                gradbookBtn.innerHTML = "download graduation book 2022";
+                gradbookBtn.href = "assets/GRADBOOK2022_FINAL_web.pdf";
+                gradbookBtn.target = "_blank";
+                document.querySelector("#grad-book").append(gradbookBtn);
+            }
+        }
+    </script>
   </body>
 </html>
